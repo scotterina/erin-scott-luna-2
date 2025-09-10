@@ -1,0 +1,30 @@
+body {
+  background-color: rgb(156, 153, 153);
+  color: azure;
+  font-family: "Academy Engraved LET", Tahoma;
+}
+
+h1 {
+  text-align: center;
+  font-size: 6em;
+  color: rgb(4, 26, 54);
+}
+
+section {
+  margin: 20px; /* space between sections */
+  padding: 20px; /* space around each section*/
+}
+
+#About {
+  text-align: center;
+}
+
+#Experience ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#Connect a {
+  color: darkcyan;
+  text-decoration: underline;
+}
