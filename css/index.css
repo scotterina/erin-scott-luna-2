@@ -1,3 +1,6 @@
+/*========================*/
+/*MOBILE*/
+/*========================*/
 body {
   background-color: rgb(156, 153, 153);
   color: azure;
@@ -6,13 +9,13 @@ body {
 
 h1 {
   text-align: center;
-  font-size: 6em;
+  font-size: 3em;
   color: rgb(4, 26, 54);
 }
 
 section {
-  margin: 20px; /* space between sections */
-  padding: 20px; /* space around each section*/
+  margin: 1.25rem; /* space between sections */
+  padding: 1.25rem; /* space around each section*/
 }
 
 nav ul {
@@ -20,15 +23,16 @@ nav ul {
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 0.375rem;
 }
 
 nav ul a {
+  font-size: 1.5em;
   text-decoration: none;
   color: darkgreen;
-  padding: 2px 6px;
+  padding: 0.25rem 0.15rem;
   background-color: rgb(232, 227, 221);
-  border-radius: 10px;
+  border-radius: 0.625rem;
 }
 
 #About {
@@ -36,12 +40,13 @@ nav ul a {
 }
 
 #Experience ul {
-  list-style-type: none;
   padding: 0;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr;
   flex-wrap: wrap;
-  gap: 4px;
+  gap: 0.25rem;
   flex-direction: column;
+  list-style-type: none;
 }
 
 #Skills ul {
@@ -61,5 +66,30 @@ nav ul a {
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 4px;
+  gap: 0.25rem;
+}
+
+/*========================*/
+/*TABLET*/
+/*========================*/
+@media (min-width: 768px) {
+  h1 {
+    font-size: 4em;
+    margin-top: 2em;
+  }
+  header nav ul {
+    gap: 3rem;
+  }
+  /*========================*/
+  /*DESKTOP*/
+  /*========================*/
+  @media (min-width: 1024px) {
+    h1 {
+      font-size: 5em;
+      margin-top: 3em;
+    }
+    header nav ul {
+      gap: 4rem;
+    }
+  }
 }
