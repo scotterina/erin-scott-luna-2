@@ -15,6 +15,22 @@ section {
   padding: 20px; /* space around each section*/
 }
 
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+nav ul a {
+  text-decoration: none;
+  color: darkgreen;
+  padding: 2px 6px;
+  background-color: rgb(232, 227, 221);
+  border-radius: 10px;
+}
+
 #About {
   text-align: center;
 }
@@ -22,9 +38,28 @@ section {
 #Experience ul {
   list-style-type: none;
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  flex-direction: column;
+}
+
+#Skills ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#Projects ul {
+  list-style-type: none;
+  padding: 0;
 }
 
 #Connect a {
   color: darkcyan;
   text-decoration: underline;
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
 }
