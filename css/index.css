@@ -2,15 +2,21 @@
 /*MOBILE*/
 /*========================*/
 body {
-  background-color: rgb(156, 153, 153);
+  background-color: black;
+  background-image: url("images/wavy-orange.jpg");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: 0 0;
+  background-size: cover;
   color: azure;
-  font-family: "Academy Engraved LET", Tahoma;
+  font-family: "Big Caslon";
 }
 
 h1 {
   text-align: center;
   font-size: 3em;
-  color: rgb(4, 26, 54);
+  color: rgb(205 191 188);
+  background-color: #4d2509d1;
 }
 
 section {
@@ -29,9 +35,9 @@ nav ul {
 nav ul a {
   font-size: 1.5em;
   text-decoration: none;
-  color: darkgreen;
+  color: #e4ece76b;
   padding: 0.25rem 0.15rem;
-  background-color: rgb(232, 227, 221);
+  background-color: rgb(63 59 5);
   border-radius: 0.625rem;
 }
 
@@ -47,16 +53,23 @@ nav ul a {
   gap: 0.25rem;
   flex-direction: column;
   list-style-type: none;
+  background-color: #8b451396;
 }
 
 #Skills ul {
   list-style-type: none;
-  padding: 0;
+  padding: 3rem;
+  background-color: #8b451396;
+}
+
+#Skills li {
+  font-size: smaller;
 }
 
 #Projects ul {
   list-style-type: none;
   padding: 0;
+  background-color: #8b451396;
 }
 
 #Connect a {
@@ -67,6 +80,7 @@ nav ul a {
   display: flex;
   flex-wrap: wrap;
   gap: 0.25rem;
+  background-color: #8b451396;
 }
 
 /*========================*/
