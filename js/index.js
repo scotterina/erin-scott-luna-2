@@ -63,3 +63,34 @@ messageForm.addEventListener("submit", function (event) {
 
   messageForm.reset();
 });
+//-------------projects-------------
+fetch("https://api.github.com/users/scotterina/repos")
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error("GitHub request failed");
+    }
+    return response.json();
+  })
+  .then((repositories) => {
+    console.log("Repositories: ", repositories);
+    const projectSection = document.getElementById("Projects");
+    const projectList = projectSection.querySelector("ul");
+    projectList.innerHTML = "";
+    //check each repository
+    repositories.forEach((repo) => {
+      const project = document.createElement("li");
+      const link = document.createElement("a");
+      link.href = repo.html_url;
+      link.textContent = repo.name;
+      project.appendChild(link);
+      projectList.appendChild(project);
+    });
+  })
+  .catch((error) => {
+    console.error("An error occurred:", error);
+    //if an empty project secion, error message
+    const projectSection = document.getElementById("Projects");
+    const errorMessage = document.createElement("p");
+    errorMessage.textContent = "No available Projects.";
+    projectSection.appendChild(errorMessage);
+  });
