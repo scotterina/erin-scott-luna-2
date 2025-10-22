@@ -28,6 +28,9 @@ for (let i = 0; i < skills.length; i++) {
   skillsList.appendChild(skill);
 }
 //---------- Message Form ---------
+//hide by default
+const messageSection = document.getElementById("My Messages");
+messageSection.style.display = "none";
 
 const messageForm = document.querySelector("form[name='leave_message']");
 
@@ -42,27 +45,43 @@ messageForm.addEventListener("submit", function (event) {
   console.log("Email: ", userEmail);
   console.log("Message: ", userMessage);
 
-  const messageSection = document.getElementById("My Messages");
   const messageList = messageSection.querySelector("ul");
-  const newMessage = document.createElement("li");
 
+  // create a new message
+  const newMessage = document.createElement("li");
   newMessage.innerHTML = `<a href="mailto:${userEmail}">${userName}</a>: <span>${userMessage}</span>`;
 
+  // creates the remove button
   const removeButton = document.createElement("button");
   removeButton.innerHTML = "remove";
   removeButton.className = "remove-btn";
   removeButton.type = "button";
 
+  // hide  if empty after removal
   removeButton.addEventListener("click", function () {
     const entry = removeButton.parentNode;
     entry.remove();
+    hideMessages();
   });
 
+  // append message and button
   newMessage.appendChild(removeButton);
   messageList.appendChild(newMessage);
 
   messageForm.reset();
+
+  // show messages after adding
+  hideMessages();
 });
+
+function hideMessages() {
+  const messageList = messageSection.querySelector("ul");
+  if (messageList.children.length > 0) {
+    messageSection.style.display = "block";
+  } else {
+    messageSection.style.display = "none";
+  }
+}
 //-------------projects-------------
 fetch("https://api.github.com/users/scotterina/repos")
   .then((response) => {
